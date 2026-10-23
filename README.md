@@ -4,7 +4,11 @@ Tira print na Steam apertando uma combinação de botões no controle (feito pen
 
 **Atalho padrão:** segurar **Select (Back) + RB** juntos.
 
-## Como instalar (uma vez só)
+## Baixar pronto (mais fácil)
+
+A cada atualização o GitHub gera o `.exe` sozinho. Abra a aba **Actions** do repositório, clique na execução mais recente de **Gerar .exe** e baixe o arquivo `print_controle` no fim da página (precisa estar logado no GitHub). Descompacte numa pasta e pronto.
+
+## Gerar o .exe você mesmo (opcional)
 
 1. Instale o Python: https://www.python.org/downloads/ (marque **"Add Python to PATH"** na instalação).
 2. Coloque todos os arquivos desta pasta numa pasta no seu PC, por exemplo `C:\PrintControle`.
