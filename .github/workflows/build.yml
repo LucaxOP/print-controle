@@ -1,0 +1,25 @@
+name: Gerar .exe
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install pygame-ce pyinstaller
+      - run: python -m PyInstaller --onefile --name print_controle print_controle.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: print_controle
+          path: |
+            dist/print_controle.exe
+            descobrir_botoes.bat
+            iniciar_com_windows.bat
+            README.md
