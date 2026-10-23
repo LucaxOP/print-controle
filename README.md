@@ -2,7 +2,7 @@
 
 Tira print na Steam apertando uma combinação de botões no controle (feito pensando no GameSir Nova Lite 2, mas funciona com qualquer controle que o Windows reconheça). O programa fica rodando em segundo plano e, quando você aperta o atalho, simula a tecla **F12**, que é a tecla de screenshot padrão da Steam.
 
-**Atalho padrão:** segurar **Select (Back) + RB** juntos.
+**Atalho padrão:** clicar os **dois analógicos juntos (L3 + R3)**. Quase nenhum jogo usa essa combinação.
 
 ## Baixar pronto (mais fácil)
 
@@ -20,7 +20,7 @@ Depois disso o Python não é mais necessário para usar o programa.
 
 1. Abra o `print_controle.exe` (pode minimizar a janela).
 2. Abra o jogo pela Steam.
-3. Segure **Select + RB**: a Steam tira o print como se você tivesse apertado F12.
+3. Clique os **dois analógicos juntos**: a Steam tira o print como se você tivesse apertado F12.
 
 Para abrir junto com o Windows, rode `iniciar_com_windows.bat` uma vez.
 
@@ -28,8 +28,8 @@ Para abrir junto com o Windows, rode `iniciar_com_windows.bat` uma vez.
 
 1. Rode `descobrir_botoes.bat` e aperte os botões que você quer usar. Ele mostra o número de cada um.
 2. Abra o `config.json` (é criado na primeira vez que o programa roda) e troque a lista `combo`. Exemplos:
-   - `"combo": [6, 5]` → Select + RB (padrão)
-   - `"combo": [8, 9]` → apertar os dois analógicos juntos
+   - `"combo": [8, 9]` → clicar os dois analógicos juntos (padrão)
+   - `"combo": [6, 5]` → Select + RB
    - `"combo": [12]` → um botão só (se o seu controle tiver um botão extra que você não usa)
 3. Feche e abra o programa de novo.
 
@@ -40,4 +40,8 @@ No `config.json` também dá para trocar a tecla (`"tecla": "F12"`) caso você t
 - **O programa não vê o controle:** confira se o Nova Lite 2 está no modo PC/XInput (no manual, normalmente é segurar o botão Home + X ao ligar, ou usar o dongle no modo X-input). Rode `descobrir_botoes.bat` para ver se ele aparece.
 - **Os números dos botões são diferentes:** acontece no modo DirectInput/Switch. Use `descobrir_botoes.bat` e ajuste o `config.json`.
 - **O print não sai em algum jogo:** alguns jogos rodando como administrador bloqueiam teclas simuladas. Nesse caso, clique com o botão direito no `print_controle.exe` → **Executar como administrador**.
-- **O Select + RB faz outra coisa no jogo:** escolha outra combinação, por exemplo os dois analógicos (`[8, 9]`).
+- **A combinação faz outra coisa no jogo:** escolha outra com `descobrir_botoes.bat`.
+
+## Usar os botões traseiros
+
+No modo XInput os botões traseiros não aparecem como botões próprios para o Windows. Programe o botão traseiro (pelo software ou atalho do controle) para clicar **L3 + R3** juntos, e ele vira o botão de print. Em outros modos do controle, rode `descobrir_botoes.bat`: se o botão traseiro aparecer com um número próprio, coloque só esse número no `combo`.

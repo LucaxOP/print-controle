@@ -27,9 +27,10 @@ ARQUIVO_CONFIG = os.path.join(PASTA, "config.json")
 
 CONFIG_PADRAO = {
     # Botoes que precisam estar apertados juntos. No modo XInput (padrao do
-    # Nova Lite 2 no PC): 6 = Select/Back, 5 = RB. Use --descobrir para ver
-    # os numeros do seu controle.
-    "combo": [6, 5],
+    # Nova Lite 2 no PC): 8 = clique do analogico esquerdo (L3), 9 = clique
+    # do analogico direito (R3). Use --descobrir para ver os numeros do seu
+    # controle.
+    "combo": [8, 9],
     # Tecla enviada. F12 e o padrao da Steam.
     "tecla": "F12",
     # Tempo minimo segurando a combinacao antes de disparar (em segundos).
