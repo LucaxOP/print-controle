@@ -2,7 +2,7 @@
 
 Tira print na Steam apertando uma combinação de botões no controle (feito pensando no GameSir Nova Lite 2, mas funciona com qualquer controle que o Windows reconheça). O programa fica rodando em segundo plano e, quando você aperta o atalho, simula a tecla **F12**, que é a tecla de screenshot padrão da Steam.
 
-**Atalho padrão:** clicar os **dois analógicos juntos (L3 + R3)**. Quase nenhum jogo usa essa combinação.
+**Atalho padrão:** apertar o botão **Home**. Os jogos praticamente não usam esse botão.
 
 ## Baixar pronto (mais fácil)
 
@@ -20,7 +20,7 @@ Depois disso o Python não é mais necessário para usar o programa.
 
 1. Abra o `print_controle.exe` (pode minimizar a janela).
 2. Abra o jogo pela Steam.
-3. Clique os **dois analógicos juntos**: a Steam tira o print como se você tivesse apertado F12.
+3. Aperte o **Home**: a Steam tira o print como se você tivesse apertado F12.
 
 Para abrir junto com o Windows, rode `iniciar_com_windows.bat` uma vez.
 
@@ -28,8 +28,11 @@ Para abrir junto com o Windows, rode `iniciar_com_windows.bat` uma vez.
 
 1. Rode `descobrir_botoes.bat` e aperte os botões que você quer usar. Ele mostra o número de cada um.
 2. Abra o `config.json` (é criado na primeira vez que o programa roda) e troque a lista `combo`. Exemplos:
-   - `"combo": [8, 9]` → clicar os dois analógicos juntos (padrão)
+   - `"combo": [10]` → Home (padrão)
+   - `"combo": [8, 9]` → clicar os dois analógicos juntos
    - `"combo": [6, 5]` → Select + RB
+
+Números no modo XInput (testado no Nova Lite 2): A=0, B=1, X=2, Y=3, LB=4, RB=5, Select=6, Start=7, L3=8, R3=9, Home=10. Os botões borboleta traseiros não aparecem nesse modo.
    - `"combo": [12]` → um botão só (se o seu controle tiver um botão extra que você não usa)
 3. Feche e abra o programa de novo.
 
@@ -44,4 +47,6 @@ No `config.json` também dá para trocar a tecla (`"tecla": "F12"`) caso você t
 
 ## Usar os botões traseiros
 
-No modo XInput os botões traseiros não aparecem como botões próprios para o Windows. Programe o botão traseiro (pelo software ou atalho do controle) para clicar **L3 + R3** juntos, e ele vira o botão de print. Em outros modos do controle, rode `descobrir_botoes.bat`: se o botão traseiro aparecer com um número próprio, coloque só esse número no `combo`.
+No modo XInput os botões traseiros não aparecem como botões próprios para o Windows. Programe o botão traseiro (pelo software ou atalho do controle) para apertar o **Home**, se o controle permitir, e ele vira o botão de print. Em outros modos do controle, rode `descobrir_botoes.bat`: se o botão traseiro aparecer com um número próprio, coloque só esse número no `combo`.
+- **Aparece um balão do Xbox "Click for Help" ao apertar o Home:** é o programa antigo "Microsoft Xbox 360 Accessories" (`XBoxStat.exe`), não este. Desative em Gerenciador de Tarefas → Inicializar → XboxStat → Desabilitar (ou desinstale em Aplicativos).
+- **O jogo troca os ícones para teclado depois do print:** é porque o print é feito simulando a tecla F12. Para evitar, ative o Steam Input no jogo (Biblioteca → botão direito no jogo → Propriedades → Controle → Ativar Steam Input) e use o atalho nativo da Steam, **Home + RB**, em vez deste programa.
