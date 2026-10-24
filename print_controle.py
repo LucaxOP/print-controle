@@ -123,7 +123,13 @@ def iniciar_pygame():
 
 
 def controles_conectados():
-    return [pygame.joystick.Joystick(i) for i in range(pygame.joystick.get_count())]
+    # O mesmo controle pode aparecer mais de uma vez ao reconectar; o
+    # instance id identifica cada conexao unica.
+    unicos = {}
+    for i in range(pygame.joystick.get_count()):
+        c = pygame.joystick.Joystick(i)
+        unicos[c.get_instance_id()] = c
+    return list(unicos.values())
 
 
 def botoes_apertados(controles):
